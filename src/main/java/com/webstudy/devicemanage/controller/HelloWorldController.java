@@ -1,0 +1,12 @@
+package com.webstudy.devicemanage.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HelloWorldController {
+    @RequestMapping("/")
+    public String homePage() {
+        return "helloWorld!!!";
+    }
+}

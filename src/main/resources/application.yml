@@ -1,0 +1,53 @@
+debug: true
+
+spring:
+    datasource:
+        url: jdbc:mariadb://124.223.200.93:10028/device_manage
+        username: device_manage
+        password: 55db275db7e8
+        driver-class-name: org.mariadb.jdbc.Driver
+
+    jpa:
+        database-platform: org.hibernate.dialect.MySQL5Dialect
+        hibernate:
+            ddl-auto: update
+
+    redis:
+        host: 127.0.0.1
+        port: 6379
+
+    servlet:
+        multipart:
+            maxFileSize : 20MB
+            maxRequestSize: 20MB
+
+
+security:
+    jwt:
+        secret: 6f60210671d0d4d09bbb35a1e441cec5605d7a3e80a38e47a4e3ce683696e2b1
+        token-expire-length: 798000000
+        token-renew-length: 798000000
+
+fileUpload:
+    uploadPath: '/www/wwwroot/dev.catop.top/static/'
+
+swagger:
+    base-package: 'com.webstudy.devicemanage.controller'
+    base-path: '/**'
+    title: 'Swagger'
+    description: 'Swagger'
+    version: '2.0'
+    license-url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+    license: 'The Apache License'
+
+
+server:
+    port: 8082
+    error:
+        include-message: always
+
+logging:
+    level:
+        root: WARN
+        com.webstudy.devicemanage.security: DEBUG
+        com.webstudy.devicemanage.controller: DEBUG
